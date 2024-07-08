@@ -45,7 +45,7 @@ var (
 							Type:        discordgo.ApplicationCommandOptionString,
 							Name:        "ctf-name",
 							Description: "CTF name",
-							Required:    false,
+							Required:    true,
 						},
 					},
 				},
@@ -68,19 +68,19 @@ var (
 
 	// Create a map of <CommandName>:<HandlerFunction> for each command. Each command will
 	// correspond to a first-class function that will handle the command's usage upon invocation
-	commandHandlers = map[string]func(s *discordgo.Session, i *discordgo.InteractionCreate){
+	// commandHandlers = map[string]func(s *discordgo.Session, i *discordgo.InteractionCreate){
 		// Ping command
-		"ping": pingCommandCallback,
+		// "ping": pingCommandCallback,
 		// 'ctf' command group. The function is defined below for cleanliness
-		"ctf": ctfCommandCallback,
-	}
+		// "ctf": ctfCommandCallback,
+	// }
 
 	// Define handlers for message components. That is to say, what will be executed when a
 	// component is interacted with.
-	componentsHandlers = map[string]func(s *discordgo.Session, i *discordgo.InteractionCreate){
-		"ctf_join":  joinCTF,
-		"ctf_leave": leaveCTF,
-	}
+	// componentsHandlers = map[string]func(s *discordgo.Session, i *discordgo.InteractionCreate){
+	// 	"ctf_join":  joinCTF,
+	//	"ctf_leave": leaveCTF,
+	// }
 )
 
 // Ping command handler
